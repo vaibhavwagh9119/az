@@ -30,7 +30,7 @@ module "aks_cluster" {
   location            = var.location
   resource_group_name = module.resource_group.resource_group_name
   dns_prefix          = "myakscluster"
-  default_node_count  = 3
+  default_node_count  = 1
   vm_size             = "Standard_DS2_v2"
   subnet_id           = module.subnets.stere_subnet_id
   availability_zones  = var.availability_zones
