@@ -37,14 +37,4 @@ module "aks_cluster" {
   tags =  { org = "stere" }
 }
 
-module "node_pools" {
-  name                = "nodepool2"
-  source              = "./modules/node_pools"
-  cluster_id          = module.aks_cluster.aks_cluster_id
-  vm_size             = "Standard_DS2_v2"
-  node_count          = 3
-  subnet_id           = module.subnets.biqmind_subnet_id
-  availability_zones  = var.availability_zones
-  tags                = { org = "biqmind" }
 
-}
